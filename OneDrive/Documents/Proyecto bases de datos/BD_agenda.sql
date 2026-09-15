@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict epMRaFPrb0oTU6cajI375W7sc9512GP7315TKL2BgytaB2owgbXF2RnA6wpLVAT
+\restrict itmsd5npxMgl7dv1DzvuIrzxWHuSEWLv14CMxEeYIUpSaMi8FZsxfn9KnFaIP1N
 
 -- Dumped from database version 18.6
 -- Dumped by pg_dump version 18.6
 
--- Started on 2026-09-14 17:44:38
+-- Started on 2026-09-14 21:36:32
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -596,6 +596,8 @@ COPY prototipo.categorias (id_categoria, nombre, id_categoria_padre) FROM stdin;
 --
 
 COPY prototipo.disponibilidad_y_gestion (id_usuario, dia_semana, hora_inicio, hora_fin) FROM stdin;
+2	4	10:00:00	11:00:00
+4	4	08:00:00	13:00:00
 \.
 
 
@@ -606,6 +608,8 @@ COPY prototipo.disponibilidad_y_gestion (id_usuario, dia_semana, hora_inicio, ho
 --
 
 COPY prototipo.eventos (id_evento, id_usuario_propietario, id_categoria, titulo, descripcion, fecha_inicio, fecha_fin, id_ubicacion) FROM stdin;
+3	2	1	Examen de Calculo	\N	2026-09-14 09:00:00	2026-09-14 10:00:00	3
+4	4	3	Fiesta de la alegria	\N	2026-09-16 09:00:00	2026-09-16 14:00:00	3
 \.
 
 
@@ -656,6 +660,7 @@ COPY prototipo.tareas_evento (id_tarea, id_evento, descripcion, fecha_limite, pr
 --
 
 COPY prototipo.ubicaciones (id_ubicacion, tipo_ubicacion, capacidad, direccion) FROM stdin;
+3	Oficinas	300	Avenida central SJ, 400mts este, 200mts sur,
 \.
 
 
@@ -686,6 +691,8 @@ COPY prototipo.usuario_telefonos (id_usuario, telefono) FROM stdin;
 --
 
 COPY prototipo.usuarios (id_usuario, nombre, apellido, fecha_registro, activo) FROM stdin;
+2	Ian	Fernández	2026-09-14	t
+4	Pablo	Gomez	2026-09-14	t
 \.
 
 
@@ -695,7 +702,7 @@ COPY prototipo.usuarios (id_usuario, nombre, apellido, fecha_registro, activo) F
 -- Name: categorias_id_categoria_seq; Type: SEQUENCE SET; Schema: prototipo; Owner: postgres
 --
 
-SELECT pg_catalog.setval('prototipo.categorias_id_categoria_seq', 3, true);
+SELECT pg_catalog.setval('prototipo.categorias_id_categoria_seq', 4, true);
 
 
 --
@@ -704,7 +711,7 @@ SELECT pg_catalog.setval('prototipo.categorias_id_categoria_seq', 3, true);
 -- Name: eventos_id_evento_seq; Type: SEQUENCE SET; Schema: prototipo; Owner: postgres
 --
 
-SELECT pg_catalog.setval('prototipo.eventos_id_evento_seq', 1, false);
+SELECT pg_catalog.setval('prototipo.eventos_id_evento_seq', 4, true);
 
 
 --
@@ -722,7 +729,7 @@ SELECT pg_catalog.setval('prototipo.log_accesos_id_log_seq', 1, false);
 -- Name: tareas_evento_id_tarea_seq; Type: SEQUENCE SET; Schema: prototipo; Owner: postgres
 --
 
-SELECT pg_catalog.setval('prototipo.tareas_evento_id_tarea_seq', 1, false);
+SELECT pg_catalog.setval('prototipo.tareas_evento_id_tarea_seq', 2, true);
 
 
 --
@@ -731,7 +738,7 @@ SELECT pg_catalog.setval('prototipo.tareas_evento_id_tarea_seq', 1, false);
 -- Name: ubicaciones_id_ubicacion_seq; Type: SEQUENCE SET; Schema: prototipo; Owner: postgres
 --
 
-SELECT pg_catalog.setval('prototipo.ubicaciones_id_ubicacion_seq', 1, false);
+SELECT pg_catalog.setval('prototipo.ubicaciones_id_ubicacion_seq', 4, true);
 
 
 --
@@ -740,7 +747,7 @@ SELECT pg_catalog.setval('prototipo.ubicaciones_id_ubicacion_seq', 1, false);
 -- Name: usuarios_id_usuario_seq; Type: SEQUENCE SET; Schema: prototipo; Owner: postgres
 --
 
-SELECT pg_catalog.setval('prototipo.usuarios_id_usuario_seq', 1, false);
+SELECT pg_catalog.setval('prototipo.usuarios_id_usuario_seq', 4, true);
 
 
 --
@@ -983,11 +990,11 @@ ALTER TABLE ONLY prototipo.usuario_telefonos
     ADD CONSTRAINT usuario_telefonos_id_usuario_fkey FOREIGN KEY (id_usuario) REFERENCES prototipo.usuarios(id_usuario);
 
 
--- Completed on 2026-09-14 17:44:38
+-- Completed on 2026-09-14 21:36:32
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict epMRaFPrb0oTU6cajI375W7sc9512GP7315TKL2BgytaB2owgbXF2RnA6wpLVAT
+\unrestrict itmsd5npxMgl7dv1DzvuIrzxWHuSEWLv14CMxEeYIUpSaMi8FZsxfn9KnFaIP1N
 

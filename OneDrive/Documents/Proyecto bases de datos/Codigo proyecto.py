@@ -634,7 +634,7 @@ class AppAgenda(ctk.CTk):
             if self.combo_ev_ubicacion.get() not in valores_ub:
                 self.combo_ev_ubicacion.set("Sin ubicación asignada")
             if hasattr(self, "combo_tarea_evento"):
-                valores_ev = ["Seleccione un evento"] + list(self.eventos_combo.keys())
+                valores_ev = ["Selecciñne un evento"] + list(self.eventos_combo.keys())
                 self.combo_tarea_evento.configure(values=valores_ev)
         except Exception as e:
             print(f"Error cargando eventos: {e}")
